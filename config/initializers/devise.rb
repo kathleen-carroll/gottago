@@ -23,12 +23,6 @@ Devise.setup do |config|
 
   config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
 
-  # config.omniauth :facebook, '304173790558562', '1dd27c35a7f2d5d0544616c3acdfbe42', callback_url: "http://localhost:3000/users/auth/facebook/callback"
-
-#   Rails.application.config.middleware.use OmniAuth::Builder do
-#     provider :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET']
-# end
-
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
