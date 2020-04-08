@@ -20,5 +20,7 @@ class User < ApplicationRecord
       user.name = auth.info.name   # assuming the user model has a name
       user.image = auth.info.image # assuming the user model has an image
     end
+
+    redirect_to map_index_path
   end
 end
