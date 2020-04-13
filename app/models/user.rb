@@ -33,4 +33,5 @@ class User < ApplicationRecord
     # self.update(lat: current[:location][:lat])
     # self.update(long: current[:location][:lng])
   end
+
 end
