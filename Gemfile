@@ -33,8 +33,14 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'active_model_serializers'
 gem 'rubocop'
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'figaro'
+gem 'geocoder'
+gem 'bootstrap', '~> 4.1.1'
+gem 'jquery-rails'
+gem 'gmaps4rails'
 gem 'sinatra'
-gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
