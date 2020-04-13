@@ -26,12 +26,9 @@ class User < ApplicationRecord
   end
 
   def address
-    # require "pry"; binding.pry
     conn = Faraday.new(url:"https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API_KEY']}")
     response = conn.post
     current = JSON.parse(response.body, symbolize_names: true)
-    # self.update(lat: current[:location][:lat])
-    # self.update(long: current[:location][:lng])
   end
 
 end
