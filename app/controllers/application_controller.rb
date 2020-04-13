@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   add_flash_types :success
 
   def current_user
-    @current_user ||= User.last if User.all != []#User.find(session[:user_id]) if session[:user_id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id] #User.last if User.all != []#
   end
 
   def four_oh_four
