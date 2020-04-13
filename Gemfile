@@ -33,6 +33,8 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'active_model_serializers'
 gem 'rubocop'
+gem 'sinatra'
+gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
