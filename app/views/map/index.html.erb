@@ -4,10 +4,12 @@
 <iframe width="600" height="450" frameborder="0" style="border:0; padding:10px" align="left"
 src="https://www.google.com/maps/embed/v1/place?q=<%= @user.lat %>,+<%= @user.long %>&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen></iframe>
 </div>
-<div class="list-results" float="right" style="padding-left:20px">
+<div class="list-results" float="left" align="left" style="padding-left:100px">
   <h3>Bathrooms Near You</h3>
   <ul>
-    <li>bathroom1</li>
+    <li>bathroom1
+      <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=Turing+School&travelmode=walking" %>
+    </li>
   </ul>
 </div>
 </div>

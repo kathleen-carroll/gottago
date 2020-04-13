@@ -1,6 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
-    # require "pry"; binding.pry
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
