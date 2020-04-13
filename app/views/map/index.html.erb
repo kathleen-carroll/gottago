@@ -1,5 +1,14 @@
-<h1>Map</h1>
-
-<p>Welcome, <%= @user.name %></p>
-
-<%= @user.to_coordinates %>
+<section>
+<div class="map-list-view">
+<div class="map" float="left" style="padding:10px">
+<iframe width="600" height="450" frameborder="0" style="border:0; padding:10px" align="left"
+src="https://www.google.com/maps/embed/v1/place?q=<%= @user.lat %>,+<%= @user.long %>&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen></iframe>
+</div>
+<div class="list-results" float="right" style="padding-left:20px">
+  <h3>Bathrooms Near You</h3>
+  <ul>
+    <li>bathroom1</li>
+  </ul>
+</div>
+</div>
+</section>
