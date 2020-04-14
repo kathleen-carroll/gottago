@@ -1,15 +1,71 @@
 <section>
 <div class="map-list-view">
 <div class="map" float="left" style="padding:10px">
-<iframe width="600" height="450" frameborder="0" style="border:0; padding:10px" align="left"
-src="https://www.google.com/maps/embed/v1/place?q=<%= @user.lat %>,+<%= @user.long %>&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen></iframe>
+<!-- <iframe width="600" height="450" frameborder="0" style="border:0; padding:10px" align="left"
+src="https://www.google.com/maps/embed/v1/place?q=<%= @user.lat %>,+<%= @user.long %>&key=<%= ENV['GOOGLE_API_KEY'] %>" allowfullscreen></iframe> -->
 </div>
+<div id="map" float="left" style="height: 400px; width: 600px;"></div>
+   <script>
+     var map;
+     var marker;
+     function initMap() {
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: <%= @user.lat %> , lng: <%= @user.long %> },
+         zoom: 13
+       });
+       var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+       var marker = new google.maps.Marker({
+          position: {lat: <%= @user.lat %> , lng: <%= @user.long %> },
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          icon: image,
+          title: 'You are here'
+        });
+      marker.setMap(map);
+      marker.addListener('click', toggleBounce);
+      setMarkers(map);
+    }
+     function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      };
+
+      var bathrooms = <%=raw @bathrooms.to_json%>;
+      // [
+      // ["Starbucks", 39.791528, -105.024745],
+      // ['7 Eleven', 39.779884, -105.006902],
+      // ['Huckleberry Roasters', 39.775456, -105.006707]
+      // ];
+
+
+
+
+    function setMarkers(map){
+      for (var i = 0; i < bathrooms.length; i++) {
+        var bathroom = bathrooms[i];
+        console.log(bathroom.latitude);
+        var marker2 = new google.maps.Marker({
+          position: {lat: bathroom.latitude, lng: bathroom.longitude},
+          map: map,
+          title: bathroom.name
+        });
+      }
+      }
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap"
+   async defer></script>
 <div class="list-results" float="left" align="left" style="padding-left:100px">
   <h3>Bathrooms Near You</h3>
   <ul>
-    <li>bathroom1
-      <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=Turing+School&travelmode=walking" %>
-    </li>
+    <% @bathrooms.each do |bathroom| %>
+      <li><%= bathroom.name %>
+        <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
+      </li>
+    <% end %>
   </ul>
 </div>
 </div>
