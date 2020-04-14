@@ -12,10 +12,10 @@ class Bathroom < ApplicationRecord
   #   longitude = json[:longitude]
   # end
 
-  def self.raw_data
-    Bathroom.all.map do |bathroom|
-      [bathroom.name, bathroom.latitude, bathroom.longitude]
-    end
-  end
+  # def self.raw_data
+  #   Bathroom.all.map do |bathroom|
+  #     [bathroom.name, bathroom.latitude, bathroom.longitude]
+  #   end
+  # end
 
 end

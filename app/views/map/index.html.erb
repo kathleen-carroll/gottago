@@ -41,24 +41,17 @@ src="https://www.google.com/maps/embed/v1/place?q=<%= @user.lat %>,+<%= @user.lo
       // ['Huckleberry Roasters', 39.775456, -105.006707]
       // ];
 
-      // function setMarkers(map){
-      //   for (var i = 0; i < bathrooms.length; i++) {
-      //     var bathroom = bathrooms[i];
-      //     var marker2 = new google.maps.Marker({
-      //       position: {lat:  , lng: },
-      //       map: map,
-      //       title:
-      //     });
-      //   }
+
 
 
     function setMarkers(map){
       for (var i = 0; i < bathrooms.length; i++) {
         var bathroom = bathrooms[i];
+        console.log(bathroom.latitude);
         var marker2 = new google.maps.Marker({
-          position: {lat: bathroom[1], lng: bathroom[2]},
+          position: {lat: bathroom.latitude, lng: bathroom.longitude},
           map: map,
-          title: bathroom[0]
+          title: bathroom.name
         });
       }
       }
@@ -68,9 +61,11 @@ src="https://www.google.com/maps/embed/v1/place?q=<%= @user.lat %>,+<%= @user.lo
 <div class="list-results" float="left" align="left" style="padding-left:100px">
   <h3>Bathrooms Near You</h3>
   <ul>
-    <li>bathroom1
-      <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=Turing+School&travelmode=walking" %>
-    </li>
+    <% @bathrooms.each do |bathroom| %>
+      <li><%= bathroom.name %>
+        <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
+      </li>
+    <% end %>
   </ul>
 </div>
 </div>
