@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'faraday'
 require 'pry'
+require './bathroom'
 
 get '/api/v1/search' do
   number_of_results = params['number_of_results']
