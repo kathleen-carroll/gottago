@@ -170,16 +170,16 @@ GEM
       omniauth (~> 1.9)
     orm_adapter (0.5.0)
     parallel (1.19.1)
-    parser (2.7.1.0)
+    parser (2.7.1.1)
       ast (~> 2.4.0)
     pg (1.2.3)
     pg (1.2.3-x64-mingw32)
     pg (1.2.3-x86-mingw32)
     popper_js (1.16.0)
-    pry (0.13.0)
+    pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry (0.13.0-java)
+    pry (0.13.1-java)
       coderay (~> 1.1)
       method_source (~> 1.0)
       spoon (~> 0.0)
@@ -264,6 +264,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    shoulda-matchers (4.3.0)
+      activesupport (>= 4.2.0)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -347,6 +349,7 @@ DEPENDENCIES
   rspec-rails
   rubocop
   sass-rails (~> 5.0)
+  shoulda-matchers
   simplecov
   sinatra
   tzinfo-data

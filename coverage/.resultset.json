@@ -1,21 +1,44 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/features/welcome/show_spec.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/spec/models/review_spec.rb": {
         "lines": [
           1,
           null,
           1,
-          1,
-          1,
           null,
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/rails_helper.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/spec/rails_helper.rb": {
         "lines": [
           null,
           1,
@@ -24,6 +47,7 @@
           null,
           1,
           1,
+          1,
           null,
           null,
           null,
@@ -43,7 +67,7 @@
           null,
           null,
           null,
-          null,
+          1,
           1,
           null,
           0,
@@ -80,10 +104,17 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/environment.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -92,7 +123,7 @@
           1
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/application.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/application.rb": {
         "lines": [
           1,
           null,
@@ -127,14 +158,14 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/boot.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/boot.rb": {
         "lines": [
           1,
           null,
           1
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/environments/test.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -180,7 +211,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/application_controller_renderer.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -192,7 +223,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/assets.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -210,7 +241,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/backtrace_silencers.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -221,7 +252,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/cookies_serializer.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -230,7 +261,7 @@
           1
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/devise.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/devise.rb": {
         "lines": [
           null,
           null,
@@ -536,7 +567,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/filter_parameter_logging.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -544,7 +575,7 @@
           1
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/geocoder.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/geocoder.rb": {
         "lines": [
           1,
           null,
@@ -575,7 +606,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/inflections.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -595,7 +626,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/mime_types.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -603,7 +634,7 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/initializers/wrap_parameters.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -621,117 +652,169 @@
           null
         ]
       },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/factories/users.rb": {
+      "/Users/daniels/turing/mod3/projects/gottago/spec/factories/bathroom.rb": {
         "lines": [
           1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/config/routes.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/app/models/user.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/models/user_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/app/controllers/welcome_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/kathleencarroll/turing/3module/projects/gottago/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null,
           1,
           2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/spec/factories/review.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          2,
+          2,
+          2,
+          null,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/app/models/review.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/app/models/user.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
           null,
           null,
           1,
           0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/config/routes.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/daniels/turing/mod3/projects/gottago/app/models/bathroom.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1586903934
+    "timestamp": 1586993287
   }
 }

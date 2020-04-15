@@ -10,10 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200412224354) do
+ActiveRecord::Schema.define(version: 20200415015732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bathrooms", force: :cascade do |t|
+    t.string "name"
+    t.string "street"
+    t.string "city"
+    t.string "state"
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "accessible"
+    t.boolean "unisex"
+    t.boolean "changing_table"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "experience"
+    t.integer "cleanliness"
+    t.integer "smell"
+    t.string "content"
+    t.boolean "well_stocked?"
+    t.boolean "purchase_required?"
+    t.boolean "cool_decor?"
+    t.bigint "user_id"
+    t.bigint "bathroom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bathroom_id"], name: "index_reviews_on_bathroom_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -33,18 +63,6 @@ ActiveRecord::Schema.define(version: 20200412224354) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-    create_table "bathrooms", force: :cascade do |t|
-      t.string "name"
-      t.string "street"
-      t.string "city"
-      t.string "state"
-      t.float "latitude"
-      t.float "longitude"
-      t.boolean "accessible"
-      t.boolean "unisex"
-      t.boolean "changing_table"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "reviews", "bathrooms"
+  add_foreign_key "reviews", "users"
 end
