@@ -8,5 +8,6 @@ class MapController < ApplicationController
     end
 
     @bathrooms = Bathroom.all
+    #.include(:reviews)
   end
 end
