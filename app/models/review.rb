@@ -7,7 +7,6 @@ class Review < ApplicationRecord
   enum experience: %w(disliked liked loved), _prefix: :experience
   enum cleanliness: %w(disliked liked loved), _prefix: :cleanliness
   enum smell: %w(disliked liked loved), _prefix: :smell
-
   
 
 end 
