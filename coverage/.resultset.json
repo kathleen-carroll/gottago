@@ -1,16 +1,76 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/features/welcome/show_spec.rb": {
+      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/features/bathroom/show_spec.rb": {
         "lines": [
           1,
           null,
           1,
           1,
-          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
           1,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
           null,
           null
         ]
@@ -58,6 +118,9 @@
           null,
           1,
           null,
+          1,
+          1,
+          null,
           null,
           null,
           null,
@@ -80,6 +143,7 @@
           1,
           null,
           null,
+          1,
           null
         ]
       },
@@ -572,6 +636,8 @@
           null,
           null,
           null,
+          null,
+          null,
           null
         ]
       },
@@ -621,11 +687,35 @@
           null
         ]
       },
+      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/factories/bathroom.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/kathleencarroll/turing/3module/projects/gottago/spec/factories/users.rb": {
         "lines": [
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
           null,
           null
         ]
@@ -637,6 +727,7 @@
           null,
           null,
           null,
+          1,
           null,
           1,
           null,
@@ -670,11 +761,13 @@
           0,
           0,
           0,
-          null,
+          0,
           null,
           null,
           null,
           1,
+          null,
+          null,
           0,
           0,
           0,
@@ -693,6 +786,20 @@
       "/Users/kathleencarroll/turing/3module/projects/gottago/app/helpers/application_helper.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/kathleencarroll/turing/3module/projects/gottago/spec/features/welcome/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -722,7 +829,7 @@
           1,
           null,
           1,
-          2,
+          1,
           null,
           null,
           1,
@@ -732,6 +839,6 @@
         ]
       }
     },
-    "timestamp": 1586903934
+    "timestamp": 1587051020
   }
 }

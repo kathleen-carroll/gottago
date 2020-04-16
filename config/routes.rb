@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # namespace 'users' do
   #   delete '/sign_out', to: 'sessions#destroy'
   # end
+  resources :bathrooms, only: :show
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
                                       :sessions => 'users/sessions'}

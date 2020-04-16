@@ -5,6 +5,6 @@ RSpec.describe 'As a visitor to site' do
     visit '/'
 
     expect(page).to have_content("Welcome to Gotta Go!")
-    expect(page).to have_button("Sign in with Facebook")
+    expect(page).to have_link("Sign in with Facebook")
   end
 end
