@@ -1,3 +1,4 @@
+<h3>MAP</h3>
 <section>
 <div class="map-list-view">
 <div id="map" float="left" style="height: 600px; width: 800px; padding: 20px;">
@@ -5,7 +6,7 @@
     // var user_location;
     // var user_location = '';
     // function getLocation() {
-    // fetch("https://www.googleapis.com/geolocation/v1/geolocate?key=<%= ENV['GOOGLE_API_KEY'] %>", {
+    // fetch("https://www.googleapis.com/geolocation/v1/geolocate?key=", {
     //   method: 'POST', // or 'PUT'
     // })
     // .then((response) => response.json())
@@ -22,14 +23,12 @@
    <script>
      var map;
      var marker;
-     function initMap(lat, long) {
+     function initMap() {
        fetch("https://www.googleapis.com/geolocation/v1/geolocate?key=<%= ENV['GOOGLE_API_KEY'] %>", {
          method: 'POST', // or 'PUT'
        })
        .then((response) => response.json())
        .then((data) => {
-         // debugger;
-         // debugger;
          lat = data.location.lat;
          long = data.location.lng;
 
@@ -60,11 +59,6 @@
       };
 
       var bathrooms = <%=raw @bathrooms.to_json%>;
-      // [
-      // ["Starbucks", 39.791528, -105.024745],
-      // ['7 Eleven', 39.779884, -105.006902],
-      // ['Huckleberry Roasters', 39.775456, -105.006707]
-      // ];
 
     function setMarkers(map){
       for (var i = 0; i < bathrooms.length; i++) {
@@ -77,9 +71,6 @@
         });
       }
     }
-
-    // getLocation();
-    // debugger;
    </script>
    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap"
    async defer></script>
@@ -92,13 +83,6 @@
           <%=bathroom.name%>
           <a> <%= link_to "More Info" %></a>
           <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.latitude}+#{@user.longitude}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
-          <!-- <script type="text/javascript">
-            document.on(“click”, “a[data-popup]”, function(event, element) {
-              if (event.stopped) return;
-              window.open($(element).href);
-              event.stop();
-              });
-          </script> -->
         </li>
       <% end %>
     </ul>
