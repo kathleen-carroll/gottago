@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#show'
+  resources :bathrooms, only: :show
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
+                                      :sessions => 'users/sessions'}
+
+  resources :map, only: :index #, path: '/auth/facebook/callback' #'/map'#
 end
