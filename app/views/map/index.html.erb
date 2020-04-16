@@ -1,17 +1,20 @@
 <section>
 <div class="map-list-view">
-<div id="map" float="left" style="height: 400px; width: 600px; padding:10px;"></div>
+<div id="map" float="left" style="height: 400px; width: 600px; padding:10px;">
+  <% if @user.latitude.nil? %>
+    <%= @user.update(latitude: 39.753203, longitude: -104.999729) %>
+  <% end %>
    <script>
      var map;
      var marker;
      function initMap() {
        map = new google.maps.Map(document.getElementById('map'), {
-         center: {lat: <%= @user.lat %> , lng: <%= @user.long %> },
+         center: {lat: <%= @user.latitude %> , lng: <%= @user.longitude %> },
          zoom: 13
        });
        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
        var marker = new google.maps.Marker({
-          position: {lat: <%= @user.lat %> , lng: <%= @user.long %> },
+          position: {lat: <%= @user.latitude %> , lng: <%= @user.longitude %> },
           map: map,
           draggable: true,
           animation: google.maps.Animation.DROP,
@@ -52,25 +55,26 @@
    </script>
    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap"
    async defer></script>
-</div>
-<div class="list-results" id="bathroom" float="right" style="padding-left:100px">
-  <h3>Bathrooms Near You</h3>
-  <ul>
-    <% @bathrooms.each do |bathroom| %>
-      <li id=" <%= bathroom.id%> ">
-        <%=bathroom.name%>
-        <a> <%= link_to "More Info" %></a>
-        <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
-        <!-- <script type="text/javascript">
-          document.on(“click”, “a[data-popup]”, function(event, element) {
-            if (event.stopped) return;
-            window.open($(element).href);
-            event.stop();
-            });
-        </script> -->
-      </li>
-    <% end %>
-  </ul>
+   </div>
+  <div class="list-results" id="bathroom" float="right" style="padding-left:100px">
+    <h3>Bathrooms Near You</h3>
+    <ul>
+      <% @bathrooms.each do |bathroom| %>
+        <li id=" <%= bathroom.id%> ">
+          <%=bathroom.name%>
+          <a> <%= link_to "More Info" %></a>
+          <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
+          <!-- <script type="text/javascript">
+            document.on(“click”, “a[data-popup]”, function(event, element) {
+              if (event.stopped) return;
+              window.open($(element).href);
+              event.stop();
+              });
+          </script> -->
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 <section class="popup" align="right">
   <div class="bathroom-show">
