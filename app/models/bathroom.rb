@@ -29,4 +29,21 @@ class Bathroom < ApplicationRecord
     d = 3958.8 * c
   end
 
+  def self.advanced_search(search_terms)
+    loc_lat = search_terms[:location_latitude]
+    loc_long = search_terms[:location_longitude]
+    distance = search_terms[:distance]
+    accessible = search_terms[:accessible]
+    unisex = search_terms[:unisex]
+    changing_table = search_terms[:changing_table]
+
+    Bathroom.all.select { |bathroom|
+      bathroom.distance_to(loc_lat, loc_long) < distance
+      && bathroom.accessible == accessible if !bathroom.accessible.nil?
+      && bathroom.unisex == unisex if !bathroom.unisex.nil?
+      && bathroom.changing_table == changing_table if !bathroom.changing_table.nil?
+    }
+
+  end
+
 end
