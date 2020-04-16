@@ -9,7 +9,6 @@ class MapController < ApplicationController
       @user.update(latitude: 39.753203, longitude: -104.999729)
     end
 
-    # @raw_bathrooms = Bathroom.raw_data
     @bathrooms = Bathroom.all
   end
 end
