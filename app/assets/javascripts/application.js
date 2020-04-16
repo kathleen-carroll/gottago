@@ -12,3 +12,10 @@
 //
 //= require rails-ujs
 //= require_tree .
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+// (‘a[data-popup]’).live(‘click’, function(e) {
+// window.open($(this).href);
+// e.preventDefault();
+// });

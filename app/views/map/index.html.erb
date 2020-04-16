@@ -1,0 +1,116 @@
+<section>
+<div class="map-list-view">
+<div id="map" float="left" style="height: 400px; width: 600px; padding:10px;"></div>
+   <script>
+     var map;
+     var marker;
+     function initMap() {
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: {lat: <%= @user.lat %> , lng: <%= @user.long %> },
+         zoom: 13
+       });
+       var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+       var marker = new google.maps.Marker({
+          position: {lat: <%= @user.lat %> , lng: <%= @user.long %> },
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          icon: image,
+          title: 'You are here'
+        });
+      marker.setMap(map);
+      marker.addListener('click', toggleBounce);
+      setMarkers(map);
+    }
+     function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      };
+
+      var bathrooms = <%=raw @bathrooms.to_json%>;
+      // [
+      // ["Starbucks", 39.791528, -105.024745],
+      // ['7 Eleven', 39.779884, -105.006902],
+      // ['Huckleberry Roasters', 39.775456, -105.006707]
+      // ];
+
+    function setMarkers(map){
+      for (var i = 0; i < bathrooms.length; i++) {
+        var bathroom = bathrooms[i];
+        console.log(bathroom.latitude);
+        var marker2 = new google.maps.Marker({
+          position: {lat: bathroom.latitude, lng: bathroom.longitude},
+          map: map,
+          title: bathroom.name
+        });
+      }
+    }
+    // debugger;
+   </script>
+   <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>&callback=initMap"
+   async defer></script>
+</div>
+<div class="list-results" id="bathroom" float="right" style="padding-left:100px">
+  <h3>Bathrooms Near You</h3>
+  <ul>
+    <% @bathrooms.each do |bathroom| %>
+      <li id=" <%= bathroom.id%> ">
+        <%=bathroom.name%>
+        <a> <%= link_to "More Info" %></a>
+        <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
+        <!-- <script type="text/javascript">
+          document.on(“click”, “a[data-popup]”, function(event, element) {
+            if (event.stopped) return;
+            window.open($(element).href);
+            event.stop();
+            });
+        </script> -->
+      </li>
+    <% end %>
+  </ul>
+</div>
+<section class="popup" align="right">
+  <div class="bathroom-show">
+    <p>Popup!</p>
+      <script type="text/javascript">
+        popup.id;
+        @param = console.log(popup.id);
+      </script>
+      <%= require "pry"; binding.pry %>
+    <%= javascript_tag "document.write(getParameter(bathroom_id));" %>
+    <%= javascript_tag "popup.id" %>
+
+    <%= javascript_tag @id = '$(".popup").html(bathroom_id);' %>
+    <%= javascript_tag @id2 = '$(".popup").html();' %>
+    <%= j javascript_tag '$(".popup").val();' %>
+    <script>  (".popup").val()  </script>
+  </div>
+</section>
+</section>
+
+
+  <script>
+    var bathroom_id;
+    let check = document.querySelector('#bathroom');
+    // debugger;
+    // var check = document.getElementById('bathroom');
+    let popup = document.querySelector('.popup');
+
+    check.addEventListener('click', function(e){
+      var bathrooms = <%=raw @bathrooms.to_json%>;
+      var bathroom_id = e.target.id;
+      let bathroom =  bathrooms.find(bathroom => {
+        return bathroom.id == bathroom_id
+      })
+      console.log(bathroom)
+      // popup.innerHTML = `
+      //   <div class="bathroom-show">
+      //     <p>Popup!</p>
+      //   </div>`
+      popup.id = e.target.id
+      popup.style.display = "block"
+    });
+  </script>
