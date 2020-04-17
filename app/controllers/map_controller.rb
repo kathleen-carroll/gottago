@@ -1,5 +1,6 @@
 class MapController < ApplicationController
   def index
+
     @user = User.find(session[:user_id])
 
     if @user.latitude.nil?

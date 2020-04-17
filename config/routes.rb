@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   resources :bathrooms, only: [:show, :new, :create]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
-                                      :sessions => 'users/sessions'}
+    :sessions => 'users/sessions'}
 
   resources :map, only: :index #, path: '/auth/facebook/callback' #'/map'#
+
+  resources :bathrooms, only: :show do
+    resources :reviews, only: [:new, :create]
+  end
 
   resources :advanced, only: :new
 end
