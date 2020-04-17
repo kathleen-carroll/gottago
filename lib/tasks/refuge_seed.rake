@@ -20,7 +20,7 @@ desc "Create Denver Bathrooms"
               latitude:       bathroom[:latitude],
               longitude:      bathroom[:longitude],
               refuge_id:      bathroom[:id])
-        end 
+        end
       end
       puts "created #{Bathroom.count} bathrooms!"
       page += 1
