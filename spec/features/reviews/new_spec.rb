@@ -11,12 +11,11 @@ RSpec.describe 'review creation', type: :feature do
 
   describe "when I visit the home show page" do
     it 'I see a link to add a review for a bathroom' do
-      # binding.pry
       visit "/bathrooms/#{@bathroom.id}"
-      
+
       click_on "Add Review"
 
       expect(current_path).to eq("/bathrooms/#{@bathroom.id}/reviews/new")
     end
-  end 
-end 
+  end
+end

@@ -2,7 +2,6 @@ class AdvancedController < ApplicationController
 
   def index
     @bathrooms = Bathroom.advanced_search(search_terms)
-    # redirect to map index
   end
 
   def new

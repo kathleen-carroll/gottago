@@ -13,14 +13,13 @@ describe 'as a user' do
 
     require "pry"; binding.pry
 
-    
+
 
     list = Bathroom.all.select { |bathroom| bathroom.distance_to(loc_lat, loc_long) < 0.5 }
 
     require "pry"; binding.pry
 
     expect(list.count).to eq(2)
-    # require "pry"; binding.pry
   end
 
 end

@@ -1,12 +1,10 @@
 class MapController < ApplicationController
   def index
-    # require "pry"; binding.pry
-
     if !current_user
       redirect_to root_path
     end
 
-    @user = current_user #User.find(session[:user_id])
+    @user = current_user
     if session[:advanced] == true && !search_terms.empty?
       @bathrooms = advanced_search(search_terms)
       session[:advanced] = false
