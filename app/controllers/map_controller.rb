@@ -6,8 +6,16 @@ class MapController < ApplicationController
       current = @user.address
       @user.update(latitude: current[:location][:lat], longitude: current[:location][:lng])
     end
+    if session[:advanced] == true
+      @bathrooms = Bathroom.advanced_search(search_terms)
+    else
+      @bathrooms = Bathroom.all
+    end
+  end
 
-    @bathrooms = Bathroom.all
-    #.include(:reviews)
+  private
+
+  def search_terms
+    params.permit(:address, :city, :state, :zip, :distance, :accessible, :changing_table, :unisex)
   end
 end
