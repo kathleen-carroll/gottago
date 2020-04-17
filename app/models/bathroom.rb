@@ -39,8 +39,6 @@ class Bathroom < ApplicationRecord
     unisex = search_terms[:unisex]
     changing_table = search_terms[:changing_table]
 
-    require "pry"; binding.pry
-
     results = Bathroom.all.select { |bathroom|
       bathroom.distance_to(location_lat, location_long) < distance
     }

@@ -8,6 +8,7 @@ class MapController < ApplicationController
     end
     if session[:advanced] == true
       @bathrooms = Bathroom.advanced_search(search_terms)
+      session[:advanced] = false
     else
       @bathrooms = Bathroom.all
     end
