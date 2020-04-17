@@ -8,7 +8,7 @@
      var long;
      function initMap() {
        fetch("https://www.googleapis.com/geolocation/v1/geolocate?key=<%= ENV['GOOGLE_API_KEY'] %>", {
-         method: 'POST', // or 'PUT'
+         method: 'POST',
        })
        .then((response) => response.json())
        .then((data) => {
@@ -49,7 +49,6 @@
     function setMarkers(map){
       for (var i = 0; i < bathrooms.length; i++) {
         var bathroom = bathrooms[i];
-        console.log(bathroom.latitude);
         var marker2 = new google.maps.Marker({
           position: {lat: bathroom.latitude, lng: bathroom.longitude},
           map: map,
