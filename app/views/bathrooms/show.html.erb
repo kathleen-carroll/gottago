@@ -1,25 +1,25 @@
 <section align = "center" id="bathroom">
   <h4>Located: <%=  "#{@bathroom.name}" %></h4>
   <h5>Address: <%=  "#{@bathroom.street}, #{@bathroom.city}, #{@bathroom.state}" %></h5>
-  <h5> Changing Table? 
+  <h5> Changing Table?
     <% if  @bathroom.changing_table == true %>
-      yes 
+      yes
      <% else %>
-      no 
+      no
       <% end%>
   </h5>
-  <h5> Accessible? 
+  <h5> Accessible?
     <% if  @bathroom.accessible == true %>
-      yes 
+      yes
      <% else %>
-      no 
+      no
       <% end%>
   </h5>
-  <h5> Unisex? 
+  <h5> Unisex?
     <% if  @bathroom.unisex == true %>
-      yes 
+      yes
      <% else %>
-      no 
+      no
       <% end%>
   </h5>
 
@@ -34,25 +34,25 @@
       <section class = "list-reviews">
         <% @bathroom.reviews.each do |review| %>
           <section id= 'review-<%=review.id%>'>
-            <h6> Purchase Required?: 
+            <h6> Purchase Required?:
               <% if  review.purchase_required? == true %>
-                yes 
+                yes
               <% else %>
-                no 
+                no
                 <% end%>
             </h6>
-            <h6> Well Stocked?: 
+            <h6> Well Stocked?:
               <% if  review.well_stocked? == true %>
-                yes 
+                yes
               <% else %>
-                no 
+                no
                 <% end%>
             </h6>
-            <h6> Cool Decor?: 
+            <h6> Cool Decor?:
               <% if  review.cool_decor? == true %>
-                yes 
+                yes
               <% else %>
-                no 
+                no
                 <% end%>
             </h6>
            <h5>Review's Notes:</h5><h6><%= review.content %></h6>

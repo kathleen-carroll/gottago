@@ -13,17 +13,12 @@ class Bathroom < ApplicationRecord
   #   longitude = json[:longitude]
   # end
 
-  def distance_to(lat, long, km=false)
-    # Calculate radial arcs for latitude and longitude
-    # require "pry"; binding.pry
+  def distance_to(lat, long)
     distance_lat = (latitude - lat) * Math::PI / 180
     distance_long = (longitude - long) * Math::PI / 180
 
-
-    a = Math.sin(distance_lat / 2) *
-        Math.sin(distance_lat / 2) +
-        Math.cos(lat * Math::PI / 180) *
-        Math.cos(lat * Math::PI / 180) *
+    a = Math.sin(distance_lat / 2) * Math.sin(distance_lat / 2) +
+        Math.cos(lat * Math::PI / 180) * Math.cos(lat * Math::PI / 180) *
         Math.sin(distance_long / 2) * Math.sin(distance_long / 2)
 
     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
@@ -39,8 +34,6 @@ class Bathroom < ApplicationRecord
     accessible = search_terms[:accessible]
     unisex = search_terms[:unisex]
     changing_table = search_terms[:changing_table]
-
-    require "pry"; binding.pry
 
     results = Bathroom.all.select { |bathroom|
       bathroom.distance_to(location_lat, location_long) < distance
@@ -69,9 +62,7 @@ class Bathroom < ApplicationRecord
 
   def self.get_coordinates(search_terms)
     query = "#{search_terms[:address]} #{search_terms[:city]}, #{search_terms[:state]} #{search_terms[:zip]}"
-    conn = Faraday.new(url:"https://maps.googleapis.com/maps/api/geocode/json?address=#{query}&key=#{ENV['GOOGLE_API_KEY']}")
-    response = conn.post
-    location = JSON.parse(response.body, symbolize_names: true)
-    location[:results].first[:geometry][:location]
+
+    GeocodeService.new.geocall(query)
   end
 end
