@@ -13,7 +13,7 @@ GottaGo is a group project that finds the nearest bathrooms based off of your cu
   
 ### Contributers: 
 - [Ezekiel Clark](https://github.com/Yetidancer) 
-- [Kathleen Carrol]( https://github.com/kathleen-carroll) 
+- [Kathleen Carroll]( https://github.com/kathleen-carroll) 
 - [Danny Moran](https://github.com/danmoran-pro) 
 - [DeMarcus Kirby](https://github.com/KirbyDD) 
  
