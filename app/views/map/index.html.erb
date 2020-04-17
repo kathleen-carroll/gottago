@@ -54,6 +54,25 @@
           map: map,
           title: bathroom.name
         });
+        marker2.addListener('click', toggleBounce);
+        marker2.addEventListener('click', function(e){
+          console.log(e)
+          var bathrooms = <%=raw @bathrooms.to_json%>;
+          var bathroom_id = e.target.id;
+          let bathroom =  bathrooms.find(bathroom => {
+            return bathroom.id == bathroom_id
+          })
+          console.log(bathroom)
+          $("#popup-name").html(bathroom.name)
+          $("#popup-street").html(bathroom.street)
+          $("#popup-city").html(bathroom.city)
+          $("#popup-state").html(bathroom.state)
+          $("#popup-access").html(bathroom.accessible)
+          $("#popup-unisex").html(bathroom.unisex)
+          $("#popup-changing").html(bathroom.changing_table)
+          popup.id = e.target.id
+          popup.style.display = "block"
+        });
       }
     }
    </script>
@@ -66,7 +85,7 @@
       <% @bathrooms.each do |bathroom| %>
         <li id=" <%= bathroom.id%> ">
           <%=bathroom.name%>
-          <a> <%= link_to "More Info" %></a>
+          <a> <%= link_to "More Info", "bathrooms/#{bathroom.id}" %></a>
           <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=my+location&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
         </li>
       <% end %>
