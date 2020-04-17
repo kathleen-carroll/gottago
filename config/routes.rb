@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :bathrooms, only: :show do 
     resources :reviews, only: [:new, :create]
   end 
+
+  resources :advanced, only: :new
 end

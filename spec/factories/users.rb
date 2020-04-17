@@ -9,5 +9,4 @@ FactoryBot.define do
     image { "https://www.picuki.com/media/2259210751275656034" }
     lat { 39.750865 }
     long { -104.9966132 }
-  end
 end 

@@ -3,12 +3,20 @@ class MapController < ApplicationController
 
     @user = User.find(session[:user_id])
 
-    if !@user.lat.nil?
+    if @user.latitude.nil?
       current = @user.address
-      @user.update(lat: current[:location][:lat], long: current[:location][:lng])
+      @user.update(latitude: current[:location][:lat], longitude: current[:location][:lng])
     end
+    if session[:advanced] == true
+      @bathrooms = Bathroom.advanced_search(search_terms)
+    else
+      @bathrooms = Bathroom.all
+    end
+  end
 
-    # @raw_bathrooms = Bathroom.raw_data
-    @bathrooms = Bathroom.all
+  private
+
+  def search_terms
+    params.permit(:address, :city, :state, :zip, :distance, :accessible, :changing_table, :unisex)
   end
 end

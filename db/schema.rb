@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20200415015732) do
     t.boolean "accessible"
     t.boolean "unisex"
     t.boolean "changing_table"
+    t.string "refuge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,8 +58,8 @@ ActiveRecord::Schema.define(version: 20200415015732) do
     t.string "uid"
     t.string "name"
     t.text "image"
-    t.float "lat"
-    t.float "long"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

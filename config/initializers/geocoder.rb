@@ -21,7 +21,9 @@ Geocoder.configure(
   # distances: :linear          # :spherical or :linear
 
   lookup: :google,
-  ip_lookup: :freegeoip,
+  ip_lookup: :maxmind, #:freegeoip,
+
+  # cache: Redis.new,
 
   google_api_key: ENV['GOOGLE_API_KEY']
 )

@@ -15,3 +15,29 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
+
+ .popup {
+   // height: 200px;
+   background-color: whitek;
+   box-shadow: 4px 4px 6px black;
+   display: none;
+   position: fixed;
+   z-index: 1;
+   justify-content: center;
+   align: center;
+ }
+
+ .bathroom-show {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .map-list-view {
+   display: flex;
+   justify-content: flex-start;
+   padding: 20px;
+ }
+
+#map{
+  justify-content: space-around;
+}
