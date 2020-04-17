@@ -4,9 +4,11 @@
   </a>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
    <div class="navbar-nav">
-     <a class="nav-item nav-link active" href="/map">Map <span class="sr-only">(current)</span></a>
-     <a class="nav-item nav-link" href="/advanced/new">Advanced Search</a>
-     <a class="nav-item nav-link" href="/bathrooms/new">Add Bathroom</a>
+     <% if current_user %>
+      <a class="nav-item nav-link active" href="/map">Map <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="/advanced/new">Advanced Search</a>
+      <a class="nav-item nav-link" href="/bathrooms/new">Add Bathroom</a>
+     <% end %>
    </div>
  </div>
    <div class="user-info" align="right">

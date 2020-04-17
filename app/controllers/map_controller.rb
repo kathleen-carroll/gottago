@@ -1,18 +1,17 @@
 class MapController < ApplicationController
   def index
+    # require "pry"; binding.pry
 
-    @user = User.find(session[:user_id])
-
-    if @user.latitude.nil?
-      current = @user.address
-      @user.update(latitude: current[:location][:lat], longitude: current[:location][:lng])
+    if !current_user
+      redirect_to root_path
     end
 
+    @user = current_user #User.find(session[:user_id])
     if session[:advanced] == true && !search_terms.empty?
       @bathrooms = advanced_search(search_terms)
       session[:advanced] = false
     else
-      @bathrooms = Bathroom.all
+      @bathrooms = Bathroom.all[0..15]
     end
   end
 
