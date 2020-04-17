@@ -4,14 +4,19 @@
    <script>
      var map;
      var marker;
+     var lat;
+     var long;
      function initMap() {
        fetch("https://www.googleapis.com/geolocation/v1/geolocate?key=<%= ENV['GOOGLE_API_KEY'] %>", {
          method: 'POST', // or 'PUT'
        })
        .then((response) => response.json())
        .then((data) => {
+         console.log(data.location)
          lat = data.location.lat;
+         $("#lat").html(lat);
          long = data.location.lng;
+         $("#lat").html(lat);
 
          map = new google.maps.Map(document.getElementById('map'), {
            center: {lat: lat , lng: long },
@@ -63,6 +68,7 @@
         <li id=" <%= bathroom.id%> ">
           <%=bathroom.name%>
           <a> <%= link_to "More Info" %></a>
+          <% @lat%><p id='lat'>  </p>
           <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.latitude}+#{@user.longitude}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
         </li>
       <% end %>
