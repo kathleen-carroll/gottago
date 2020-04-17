@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :review, class: Review do
-    experience { 1 }
-    cleanliness { 1 }
-    smell { 1 }
+    experience { 2 }
+    cleanliness { 2 }
+    smell { 2 }
     content {Faker::Lorem.sentence}
     
     well_stocked? {:true}

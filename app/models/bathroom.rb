@@ -1,4 +1,5 @@
 class Bathroom < ApplicationRecord
+  has_many :reviews, dependent: :destroy
 
   # def initialize(json)
   #   name = json[:name]
