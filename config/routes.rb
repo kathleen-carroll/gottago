@@ -6,4 +6,6 @@ Rails.application.routes.draw do
                                       :sessions => 'users/sessions'}
 
   resources :map, only: :index #, path: '/auth/facebook/callback' #'/map'#
+
+  resources :advanced, only: :new
 end
