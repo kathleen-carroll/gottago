@@ -1,3 +1,5 @@
+<section id="forms">
+  <div class="search">
 <%= form_tag "/map", method: :get do %>
     <%= label_tag :address %>:<br>
     <%= text_field_tag :address %><br><br>
@@ -11,30 +13,31 @@
     <%= label_tag :zip %>:<br>
     <%= text_field_tag :zip %><br><br>
 
-    <%= label_tag "Distance from Address" %>:<br>
+    <%= label_tag :distance %>:<br>
     <%= text_field_tag :distance %><br>
-
     <br>
     Accessible?:<br>
-    <select name="accessible" id="accessible">
+    <select name="accessible" id="accessible" class="form-control form-control-sm">
       <option value=nil></option>
       <option value="true">true</option>
       <option value="false">false</option>
     </select>
     <br><br>
     Has Changing Table?:<br>
-    <select name="changing_table" id="changing_table">
+    <select name="changing_table" id="changing_table" class="form-control form-control-sm">
       <option value=nil></option>
       <option value="true">true</option>
       <option value="false">false</option>
     </select>
     <br><br>
     Unisex?:<br>
-    <select name="unisex" id="unisex">
+    <select name="unisex" id="unisex" class="form-control form-control-sm">
       <option value=nil></option>
       <option value="true">true</option>
       <option value="false">false</option>
     </select>
     <br><br>
-    <%= submit_tag 'Search' %>
+    <%= submit_tag 'Search', class: "btn btn-primary"%>
   <% end %>
+</div>
+</section>
