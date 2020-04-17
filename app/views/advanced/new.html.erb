@@ -1,20 +1,21 @@
 <%= form_tag "/map", method: :get do %>
     <%= label_tag :address %>:<br>
-    <%= text_field_tag :address %><br><br>
+    <%= text_field_tag :address, '', required: true %><br><br>
 
     <%= label_tag :city %>:<br>
-    <%= text_field_tag :city %><br><br>
+    <%= text_field_tag :city, '', required: true %><br><br>
 
     <%= label_tag :state %>:<br>
-    <%= text_field_tag :state %><br><br>
+    <%= text_field_tag :state, '', required: true %><br><br>
 
     <%= label_tag :zip %>:<br>
     <%= text_field_tag :zip %><br><br>
 
-    <%= label_tag "Distance from Address" %>:<br>
-    <%= text_field_tag :distance %><br>
+    <label for="distance">Distance from address (0.1-100 miles):</label><br>
+    <input type="number" id="distance" name="distance"
+       min="0.1" max="100" value="5.0" step="0.1">
+    <br><br>
 
-    <br>
     Accessible?:<br>
     <select name="accessible" id="accessible">
       <option value=nil></option>
@@ -22,6 +23,7 @@
       <option value="false">false</option>
     </select>
     <br><br>
+
     Has Changing Table?:<br>
     <select name="changing_table" id="changing_table">
       <option value=nil></option>
@@ -29,6 +31,7 @@
       <option value="false">false</option>
     </select>
     <br><br>
+
     Unisex?:<br>
     <select name="unisex" id="unisex">
       <option value=nil></option>
@@ -36,5 +39,6 @@
       <option value="false">false</option>
     </select>
     <br><br>
+
     <%= submit_tag 'Search' %>
   <% end %>
