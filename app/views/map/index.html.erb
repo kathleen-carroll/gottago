@@ -16,7 +16,7 @@
          lat = data.location.lat;
          $("#lat").html(lat);
          long = data.location.lng;
-         $("#lat").html(lat);
+         $("#lng").html(long);
 
          map = new google.maps.Map(document.getElementById('map'), {
            center: {lat: lat , lng: long },
@@ -63,12 +63,16 @@
    </div>
   <div class="list-results" id="bathroom" float="right" style="padding-left:10px">
     <h3>Bathrooms Near You</h3>
+    <p id='lat'></p>
+    <p id='lng'></p>
+    <script >
+      
+    </script>
     <ul>
       <% @bathrooms.each do |bathroom| %>
         <li id=" <%= bathroom.id%> ">
           <%=bathroom.name%>
           <a> <%= link_to "More Info" %></a>
-          <% @lat%><p id='lat'>  </p>
           <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.latitude}+#{@user.longitude}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
         </li>
       <% end %>
@@ -76,7 +80,11 @@
   </div>
 <section class="popup">
   <div class="bathroom-show">
-    <h3 id="popup-name">Popup!</h3>
+    <p><h3 id="popup-name">Popup!</h3>
+    <a id="popup-street">Popup!</a>
+    <a id="popup-city">Popup!,</a>
+    <a>, </a>
+    <a id="popup-state">Popup!</a></p>
   </div>
 </section>
 </div>
@@ -96,10 +104,12 @@
       })
       console.log(bathroom)
       $("#popup-name").html(bathroom.name)
-      // popup.innerHTML = `
-      //   <div class="bathroom-show">
-      //     <p>Popup!</p>
-      //   </div>`
+      $("#popup-street").html(bathroom.street)
+      $("#popup-city").html(bathroom.city)
+      $("#popup-state").html(bathroom.state)
+      $("#popup-access").html(bathroom.accessible)
+      $("#popup-unisex").html(bathroom.unisex)
+      $("#popup-changing").html(bathroom.changing_table)
       popup.id = e.target.id
       popup.style.display = "block"
     });
