@@ -1,11 +1,7 @@
 class Bathroom < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
-  validates_presence_of :name,
-                        :street,
-                        :city,
-                        :state,
-                        :latitude,
+  validates_presence_of :latitude,
                         :longitude
 
   def distance_to(lat, long)
