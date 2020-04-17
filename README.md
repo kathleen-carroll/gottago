@@ -7,7 +7,7 @@
 
 ## Welcome to GottaGO! 
   
-GottaGo is a group project that finds the nearest bathrooms based off of your current location. It uses Facebook OAuth to authenticate users and Google Maps' API to add an interactive map, or street view. Additionally, it use the [GottaGO-Mirco](https://github.com/Yetidancer/gottago_sinatra) microservice to return nearest bathrooms alongside, [RefugeRestrooms](https://www.refugerestrooms.org/api/docs/) API as a starting database. Our unique mapping algorithms ensure the user is provided with the nearest bathroom when you *GottaGO*. We hope that you enjoy our project, should you have any questions, comments or concerns all feedback is welcome in the comment section below! 
+GottaGo is a group project that finds the nearest bathrooms based off of your current location. It uses Facebook OAuth to authenticate users and Google Maps' API to add an interactive map, or street view. Additionally, it uses the [GottaGO-Mirco](https://github.com/Yetidancer/gottago_sinatra) microservice to return nearest bathrooms alongside, [RefugeRestrooms](https://www.refugerestrooms.org/api/docs/) API as a starting database. Our unique mapping algorithms ensure the user is provided with the nearest bathroom when you *GottaGO*. We hope that you enjoy our project, should you have any questions, comments or concerns all feedback is welcome in the comment section below! 
   
 #### To view our project in production [click here](https://gotta-go-yo.herokuapp.com/).
   
