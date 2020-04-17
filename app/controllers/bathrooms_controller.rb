@@ -11,7 +11,6 @@ class BathroomsController < ApplicationController
     bathroom_longitude = get_coordinates[:lng]
     bathroom = Bathroom.create(bathroom_params)
     bathroom.update_attributes(latitude: bathroom_latitude, longitude: bathroom_longitude)
-    require "pry"; binding.pry
     if bathroom.save
       redirect_to "/bathrooms/#{bathroom.id}"
     else
@@ -28,9 +27,7 @@ class BathroomsController < ApplicationController
 
   def get_coordinates
     query = "#{params[:street]} #{params[:city]}, #{params[:state]} #{params[:zip]}"
-    conn = Faraday.new(url:"https://maps.googleapis.com/maps/api/geocode/json?address=#{query}&key=#{ENV['GOOGLE_API_KEY']}")
-    response = conn.post
-    location = JSON.parse(response.body, symbolize_names: true)
-    location[:results].first[:geometry][:location]
+
+    GeocodeService.new.geocall(query)
   end
 end
