@@ -1,7 +1,10 @@
 class MapController < ApplicationController
   def index
+    if !current_user
+      redirect_to root_path
+    end
 
-    @user = User.find(session[:user_id])
+    @user = current_user #User.find(session[:user_id])
 
     if session[:advanced] == true
       @bathrooms = Bathroom.advanced_search(search_terms)
