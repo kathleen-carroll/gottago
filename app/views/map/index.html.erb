@@ -63,17 +63,12 @@
    </div>
   <div class="list-results" id="bathroom" float="right" style="padding-left:10px">
     <h3>Bathrooms Near You</h3>
-    <p id='lat'></p>
-    <p id='lng'></p>
-    <script >
-      
-    </script>
     <ul>
       <% @bathrooms.each do |bathroom| %>
         <li id=" <%= bathroom.id%> ">
           <%=bathroom.name%>
           <a> <%= link_to "More Info" %></a>
-          <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.latitude}+#{@user.longitude}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
+          <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=my+location&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
         </li>
       <% end %>
     </ul>
