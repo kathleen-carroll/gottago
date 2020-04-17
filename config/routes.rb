@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#show'
-  resources :bathrooms, only: :show
+  resources :bathrooms, only: [:show, :new]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",
                                       :sessions => 'users/sessions'}
