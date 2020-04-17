@@ -8,17 +8,19 @@ desc "Create Denver Bathrooms"
       response = Faraday.get("https://gottago-sinatra.herokuapp.com/api/v1/all?page=#{page}")
       data = JSON.parse(response.body, symbolize_names: true)
       data.each do |bathroom|
-          Bathroom.create!(
-            name:           bathroom[:name],
-            street:         bathroom[:street],
-            city:           bathroom[:city],
-            state:          bathroom[:state],
-            accessible:     bathroom[:accessible],
-            unisex:         bathroom[:unisex],
-            changing_table: bathroom[:changing_table],
-            latitude:       bathroom[:latitude],
-            longitude:      bathroom[:longitude],
-            refuge_id:      bathroom[:id])
+        if bathroom[:latitude].class == Float && bathroom[:longitude].class == Float
+            Bathroom.create!(
+              name:           bathroom[:name],
+              street:         bathroom[:street],
+              city:           bathroom[:city],
+              state:          bathroom[:state],
+              accessible:     bathroom[:accessible],
+              unisex:         bathroom[:unisex],
+              changing_table: bathroom[:changing_table],
+              latitude:       bathroom[:latitude],
+              longitude:      bathroom[:longitude],
+              refuge_id:      bathroom[:id])
+        end 
       end
       puts "created #{Bathroom.count} bathrooms!"
       page += 1
