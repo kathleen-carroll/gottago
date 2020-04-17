@@ -12,7 +12,7 @@ class Bathroom < ApplicationRecord
         Math.cos(lat * Math::PI / 180) * Math.cos(lat * Math::PI / 180) *
         Math.sin(distance_long / 2) * Math.sin(distance_long / 2)
 
-    c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+    c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt((1-a).abs))
 
     d = 3958.8 * c
 

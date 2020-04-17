@@ -6,10 +6,10 @@ class MapController < ApplicationController
 
     @user = current_user
     if session[:advanced] == true && !search_terms.empty?
-      @bathrooms = advanced_search(search_terms)
+      @bathrooms = advanced_search(search_terms)[1..20]
       session[:advanced] = false
     else
-      @bathrooms = Bathroom.all[0..15]
+      @bathrooms = Bathroom.all.limit(20)
     end
   end
 
