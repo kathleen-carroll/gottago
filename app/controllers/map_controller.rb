@@ -2,10 +2,6 @@ class MapController < ApplicationController
   def index
     @user = User.find(session[:user_id])
 
-    if @user.latitude.nil?
-      current = @user.address
-      @user.update(latitude: current[:location][:lat], longitude: current[:location][:lng])
-    end
     if session[:advanced] == true
       @bathrooms = Bathroom.advanced_search(search_terms)
     else
