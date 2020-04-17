@@ -1,0 +1,9 @@
+<section align = "center" id="bathroom">
+  <h1>Located:<%=  "#{@bathroom.name}" %></h4>
+  <h4>Address:<%=  "#{@bathroom.street}, #{@bathroom.city}, #{@bathroom.state}" %></h4>
+  <h4>Accessible? <%= "#{@bathroom.accessible}" %></h4>
+  <h4>Unisex? <%= "#{@bathroom.unisex}" %></h4>
+  <h4>Changing Table? <%= "#{@bathroom.changing_table}" %></h4>
+  <h4><%= link_to "Add Review", "bathrooms/#{@bathroom.id}/reviews/new" %></h4>
+</section>
+

@@ -1,6 +1,8 @@
 class MapController < ApplicationController
   def index
-    @user = User.find(session[:user_id])
+
+    @user = User.find(current_user[:id])
+    # @user = User.find(session[:user_id])
 
     if !@user.lat.nil?
       current = @user.address

@@ -62,7 +62,7 @@ src="https://www.google.com/maps/embed/v1/place?q=<%= @user.lat %>,+<%= @user.lo
   <h3>Bathrooms Near You</h3>
   <ul>
     <% @bathrooms.each do |bathroom| %>
-      <li><%= bathroom.name %>
+      <li><%= link_to bathroom.name, "/bathrooms/#{bathroom.id}" %>
         <%= link_to "Get Directions", "https://www.google.com/maps/dir/?api=1&origin=#{@user.lat}+#{@user.long}&destination=#{bathroom.latitude}+#{bathroom.longitude}&travelmode=walking" %>
       </li>
     <% end %>
