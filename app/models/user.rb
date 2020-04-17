@@ -28,9 +28,9 @@ class User < ApplicationRecord
   def address
     # @geoip_city = GeoIP.new('lib/GeoLiteCity.dat').city(request.remote_ip)
 
-    conn = Faraday.new(url:"https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API_KEY']}")
-    response = conn.post
-    current = JSON.parse(response.body, symbolize_names: true)
+    # conn = Faraday.new(url:"https://www.googleapis.com/geolocation/v1/geolocate?key=#{ENV['GOOGLE_API_KEY']}")
+    # response = conn.post
+    # current = JSON.parse(response.body, symbolize_names: true)
   end
 
 end
