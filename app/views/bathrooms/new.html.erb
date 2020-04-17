@@ -1,0 +1,39 @@
+<%= form_tag "/bathrooms", method: :post do %>
+    <%= label_tag :name %>:<br>
+    <%= text_field_tag :name %><br><br>
+
+    <%= label_tag :street %>:<br>
+    <%= text_field_tag :street %><br><br>
+
+    <%= label_tag :city %>:<br>
+    <%= text_field_tag :city %><br><br>
+
+    <%= label_tag :state %>:<br>
+    <%= text_field_tag :state %><br><br>
+
+    <%= label_tag :zip %>:<br>
+    <%= text_field_tag :zip %><br><br>
+
+    Accessible?:<br>
+    <select name="accessible" id="accessible">
+      <option value=nil></option>
+      <option value="true">true</option>
+      <option value="false">false</option>
+    </select>
+    <br><br>
+    Has Changing Table?:<br>
+    <select name="changing_table" id="changing_table">
+      <option value=nil></option>
+      <option value="true">true</option>
+      <option value="false">false</option>
+    </select>
+    <br><br>
+    Unisex?:<br>
+    <select name="unisex" id="unisex">
+      <option value=nil></option>
+      <option value="true">true</option>
+      <option value="false">false</option>
+    </select>
+    <br><br>
+    <%= submit_tag 'Create Bathroom' %>
+  <% end %>

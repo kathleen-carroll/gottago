@@ -1,1 +1,63 @@
-<%= @bathroom.name %>
+<section align = "center" id="bathroom">
+  <h4>Located: <%=  "#{@bathroom.name}" %></h4>
+  <h5>Address: <%=  "#{@bathroom.street}, #{@bathroom.city}, #{@bathroom.state}" %></h5>
+  <h5> Changing Table?
+    <% if  @bathroom.changing_table == true %>
+      yes
+     <% else %>
+      no
+      <% end%>
+  </h5>
+  <h5> Accessible?
+    <% if  @bathroom.accessible == true %>
+      yes
+     <% else %>
+      no
+      <% end%>
+  </h5>
+  <h5> Unisex?
+    <% if  @bathroom.unisex == true %>
+      yes
+     <% else %>
+      no
+      <% end%>
+  </h5>
+
+</section><br>
+
+<br><section align = "center" id = "reviews">
+  <h3>Reviews</h3>
+    <h6><%= link_to "Add Review", new_bathroom_review_path(@bathroom.id) %></h6>
+    <%if @bathroom.reviews.empty? %>
+        <h5>This bathroom has not yet been reviewed.</h5>
+    <% else %>
+      <section class = "list-reviews">
+        <% @bathroom.reviews.each do |review| %>
+          <section id= 'review-<%=review.id%>'>
+            <h6> Purchase Required?:
+              <% if  review.purchase_required? == true %>
+                yes
+              <% else %>
+                no
+                <% end%>
+            </h6>
+            <h6> Well Stocked?:
+              <% if  review.well_stocked? == true %>
+                yes
+              <% else %>
+                no
+                <% end%>
+            </h6>
+            <h6> Cool Decor?:
+              <% if  review.cool_decor? == true %>
+                yes
+              <% else %>
+                no
+                <% end%>
+            </h6>
+           <h5>Review's Notes:</h5><h6><%= review.content %></h6>
+          </section>
+        <% end %>
+      </section>
+    <% end %>
+</section>

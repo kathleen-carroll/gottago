@@ -1,9 +1,11 @@
 class MapController < ApplicationController
   def index
+
     @user = User.find(session[:user_id])
 
     if session[:advanced] == true
       @bathrooms = Bathroom.advanced_search(search_terms)
+      session[:advanced] = false
     else
       @bathrooms = Bathroom.all
     end

@@ -1,0 +1,55 @@
+<section align = "center" id="bathroom">
+<%= form_tag bathroom_reviews_path, method: :post do %>
+    <br>
+  Was a purchased required in order to access the restroom?<br>
+    <select name="purchase_required?" id="purchase_required?">
+      <option value=nil></option>
+      <option value= "true" >yes</option>
+      <option value= "false">no</option>
+    </select><br>
+    <br>
+    How did you feel about the bathroom's cleanliness<br>
+    <select name="cleanliness" id="cleanliness">
+      <option value=nil></option>
+      <option value= 1 >Disliked</option>
+      <option value= 2 >Liked</option>
+      <option value= 3 >Loved</option>
+    </select>
+    <br><br>
+  How did you feel about the bathroom's smell?<br>
+    <select name="smell" id="Smell">
+      <option value=nil></option>
+      <option value= 1 >Disliked</option>
+      <option value= 2 >Liked</option>
+      <option value= 3 >Loved</option>
+    </select><br>
+    <br>
+  Did this bathroom have nice style?<br>
+    <select name="cool_decor?" id="cool_decor?">
+      <option value=nil></option>
+      <option value= "true" >yes</option>
+      <option value= "false">no</option>
+    </select><br>
+    <br>
+  How was your experience?<br>
+  <select name="experience" id="experience">
+    <option value=nil></option>
+    <option value= 1 >Disliked</option>
+    <option value= 2 >Liked</option>
+    <option value= 3 >Loved</option>
+  </select>
+  <br>
+
+  Was it well stocked?<br>
+    <select name="well_stocked?" id="well_stocked?">
+      <option value=nil></option>
+      <option value= "true" >yes</option>
+      <option value= "false">no</option>
+    </select><br>
+
+    <br><%= label_tag "Additional Notes?" %><br>
+    <%= text_field_tag :content %><br>
+    <br><br>
+    <%= submit_tag 'Submit Review' %>
+  <% end %>
+</section>

@@ -29,8 +29,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'faraday'
 gem 'jquery'
-gem 'factory_bot_rails'
-gem 'faker'
 gem 'active_model_serializers'
 gem 'rubocop'
 gem 'devise'
@@ -53,6 +51,9 @@ group :development, :test do
   gem 'awesome_print'
   gem 'webmock'
   gem 'simplecov'
+  gem 'shoulda-matchers'
+gem 'factory_bot_rails'
+gem 'faker'
 end
 
 group :development do
