@@ -185,8 +185,10 @@ GEM
       method_source (~> 1.0)
       spoon (~> 0.0)
     public_suffix (4.0.4)
-    puma (3.12.4)
-    puma (3.12.4-java)
+    puma (4.3.12)
+      nio4r (~> 2.0)
+    puma (4.3.12-java)
+      nio4r (~> 2.0)
     rack (2.2.2)
     rack-protection (2.0.8.1)
       rack
@@ -346,7 +348,7 @@ DEPENDENCIES
   omniauth-facebook
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.7)
+  puma (~> 4.3)
   rails (~> 5.1.7)
   rspec-rails
   rubocop
